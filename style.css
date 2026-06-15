@@ -153,7 +153,7 @@ color: lightpink;
 }
 
 .interactive-sales-dashboard,
-.resume-generator,
+.CyberSafe-Finance-Web-Project,
 .support-ticket-docker {
     display: inline-block;
     margin: 10px;
@@ -175,7 +175,7 @@ color: lightpink;
     border-left: 5px solid #0A66C2;
 }
 
-.resume-generator {
+.CyberSafe-Finance-Web-Project {
     border-left: 5px solid #FF69B4;
 }
 
@@ -184,7 +184,7 @@ color: lightpink;
 }
 
 .interactive-sales-dashboard:hover,
-.resume-generator:hover,
+.CyberSafe-Finance-Web-Project:hover,
 .support-ticket-docker:hover {
     background: white;
     transform: translateY(-4px);
@@ -287,7 +287,7 @@ h3 {
     .buttonIN,
     .buttonGIT,
     .interactive-sales-dashboard,
-    .resume-generator,
+    .CyberSafe-Finance-Web-Project,
     .support-ticket-docker {
         display: block;
         width: 80%;
