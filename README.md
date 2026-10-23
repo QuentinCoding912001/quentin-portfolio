@@ -2,7 +2,7 @@
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-green) ![Hosted on GitHub Pages](https://img.shields.io/badge/hosted-GitHub%20Pages-222)
 
-My personal portfolio: who I am, what I build, and how to reach me.
+My personal portfolio as an ICT support and digital operations professional who builds web tools and dashboards: who I am, what I've built, and how to reach me.
 
 **Live site:** https://quentincoding912001.github.io/quentin-portfolio/
 
