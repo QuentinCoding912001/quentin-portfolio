@@ -16,6 +16,7 @@ My personal portfolio: who I am, what I build, and how to reach me.
 - Accessible: visible keyboard focus, labelled controls, reduced-motion support and good colour contrast
 - Fast: one stylesheet, a resized portrait with fixed dimensions (no layout shift) and preconnected fonts
 - Share-ready: Open Graph tags and a 1200x630 preview image for LinkedIn, WhatsApp and X
+- Search-ready: canonical URL, sitemap and schema.org structured data for me and WebNest
 
 ## Run it locally
 
@@ -33,7 +34,9 @@ python -m http.server 8000   # then open http://localhost:8000
 index.html      Page content and a small script for the theme toggle and copy button
 style.css       Design tokens, layout and both themes
 prof.jpg        Portrait
-og-image.png    Link preview image
+og-image.jpg    Link preview image
+icon-180.png    Home-screen icon for iPhone and iPad
+sitemap.xml     Sitemap for search engines
 docs/           Screenshot used in this README
 ```
 

@@ -10,6 +10,8 @@
     --accent-soft: #f8e3ec;
     --plum: #4b2559;
     --chip: #f4eaef;
+    --contact-bg: #4b2559;
+    --contact-fg: #fbf6f8;
 
     --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
     --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
@@ -31,6 +33,8 @@
         --accent-soft: #3b1a2a;
         --plum: #d8b4e8;
         --chip: #2b1a23;
+        --contact-bg: #2e1638;
+        --contact-fg: #f5e9ef;
         color-scheme: dark;
     }
 }
@@ -46,6 +50,8 @@
     --accent-soft: #3b1a2a;
     --plum: #d8b4e8;
     --chip: #2b1a23;
+    --contact-bg: #2e1638;
+    --contact-fg: #f5e9ef;
     color-scheme: dark;
 }
 
@@ -119,6 +125,35 @@ h3 {
     margin: 0 0 10px;
 }
 
+.skip-link {
+    position: absolute;
+    left: 16px;
+    top: -100px;
+    z-index: 50;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: calc(env(safe-area-inset-top, 0px) + 12px);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* ---------- Nav ---------- */
 .nav {
     position: sticky;
@@ -154,9 +189,18 @@ h3 {
     align-items: center;
     gap: 22px;
     list-style: none;
-    margin: 0 0 0 auto;
+    margin: 0;
     padding: 0;
     font-size: 0.95rem;
+}
+
+.nav-links-wrap {
+    margin-left: auto;
+    min-width: 0;
+}
+
+main:focus {
+    outline: none;
 }
 
 .nav-links a {
@@ -184,6 +228,15 @@ h3 {
 .theme-toggle svg {
     width: 18px;
     height: 18px;
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle[aria-pressed="true"] .icon-moon {
+    display: none;
+}
+
+.theme-toggle[aria-pressed="true"] .icon-sun {
+    display: block;
 }
 
 /* ---------- Hero ---------- */
@@ -241,7 +294,7 @@ h3 {
 }
 
 .btn-ghost {
-    border-color: var(--line);
+    border-color: color-mix(in srgb, var(--muted) 45%, transparent);
     background: var(--surface);
     color: var(--fg);
 }
@@ -295,6 +348,7 @@ h3 {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+    height: auto;
     object-position: center 20%;
     border-radius: 999px 999px 24px 24px;
 }
@@ -581,13 +635,13 @@ section {
 
 /* Contact */
 .contact {
-    background: var(--plum);
-    color: var(--bg);
+    background: var(--contact-bg);
+    color: var(--contact-fg);
     border-top: none;
 }
 
 .contact .eyebrow {
-    color: var(--bg);
+    color: var(--contact-fg);
     opacity: 0.75;
 }
 
@@ -614,20 +668,24 @@ section {
 .email {
     font-family: var(--font-mono);
     font-size: clamp(1rem, 2.6vw, 1.3rem);
-    color: var(--bg);
+    color: var(--contact-fg);
     overflow-wrap: anywhere;
 }
 
 .contact .btn-ghost {
     background: transparent;
-    color: var(--bg);
-    border-color: color-mix(in srgb, var(--bg) 45%, transparent);
+    color: var(--contact-fg);
+    border-color: color-mix(in srgb, var(--contact-fg) 45%, transparent);
     cursor: pointer;
     font-family: inherit;
 }
 
 .contact .btn-ghost:hover {
-    border-color: var(--bg);
+    border-color: var(--contact-fg);
+}
+
+.contact :focus-visible {
+    outline-color: var(--contact-fg);
 }
 
 .contact .socials {
@@ -663,9 +721,13 @@ footer .wrap {
     }
 
     /* On phones the links move to a second row that scrolls sideways if needed */
-    .nav-links {
+    .nav-links-wrap {
         order: 3;
         width: 100%;
+        margin-left: 0;
+    }
+
+    .nav-links {
         gap: 18px;
         overflow-x: auto;
         scrollbar-width: none;
@@ -711,5 +773,10 @@ footer .wrap {
     *::before,
     *::after {
         transition: none !important;
+    }
+
+    .btn:hover,
+    .card:hover {
+        transform: none;
     }
 }
