@@ -37,6 +37,7 @@ prof.jpg        Portrait
 og-image.jpg    Link preview image
 icon-180.png    Home-screen icon for iPhone and iPad
 sitemap.xml     Sitemap for search engines
+Quentin-Bombande-CV.pdf   CV for download
 docs/           Screenshot used in this README
 ```
 

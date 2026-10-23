@@ -658,6 +658,24 @@ section {
     margin: 18px 0 28px;
 }
 
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.contact .btn-primary {
+    background: var(--contact-fg);
+    color: var(--contact-bg);
+}
+
+.wa-icon {
+    width: 18px;
+    height: 18px;
+    flex: none;
+}
+
 .email-row {
     display: flex;
     flex-wrap: wrap;
